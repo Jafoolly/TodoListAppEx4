@@ -1,13 +1,63 @@
 package com.example.todolistapp;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import java.util.Date;
+import java.util.UUID;
 
-public class Todo extends AppCompatActivity {
+public class Todo {
+    private UUID mId;
+    private String mTitle;
+    private String mDetail;
+    private Date mDate;
+    private boolean mIsComplete;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_todo);
+    public UUID getId() {
+        return mId;
+    }
+
+    public void setId(UUID mId) {
+        this.mId = mId;
+    }
+
+    public String getTitle() {
+        return mTitle;
+    }
+
+    public void setTitle(String mTitle) {
+        this.mTitle = mTitle;
+    }
+
+    public String getDetail() {
+        return mDetail;
+    }
+
+    public void setDetail(String mDetail) {
+        this.mDetail = mDetail;
+    }
+
+    public Date getDate() {
+        return mDate;
+    }
+
+    public void setDate(Date mDate) {
+
+        this.mDate = mDate;
+    }
+
+    public boolean isIsComplete() {
+
+        return mIsComplete;
+    }
+
+    public void setIsComplete(boolean mIsComplete) {
+        this.mIsComplete = mIsComplete;
+    }
+
+    public void setComplete(boolean complete) {
+        this.mIsComplete = complete;
+    }
+
+    public Todo() {
+        mId = UUID.randomUUID();
+        mDate = new Date();
     }
 }
